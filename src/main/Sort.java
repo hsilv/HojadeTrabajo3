@@ -3,6 +3,7 @@ package main;
 import java.util.ArrayList;
 
 public class Sort<T> implements Comparador {
+    //Quicksort
     public void Quicksort(ArrayList<Integer> data, int t){
         ArrayList<Integer> l1 = new ArrayList<Integer>();
         ArrayList<Integer> l2 = new ArrayList<Integer>();
