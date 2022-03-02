@@ -1,5 +1,6 @@
 package main;
 
-public class Sort<T> implements Comparador {
+public class Sort
+{
     
 }
