@@ -26,4 +26,8 @@ public class Sort<T> implements Comparador {
         for(int i = 0;i<t2;i++)
             data.add(t1+i+1,l2.get(i));
     }
+
+    public void Radix(ArrayList<Integer> data){
+        
+    }
 }
