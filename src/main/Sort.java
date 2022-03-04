@@ -3,7 +3,6 @@ import java.util.*;
 
 import java.util.ArrayList;
 
-import javafx.scene.control.IndexRange;
 
 public class Sort<T> implements Comparador {
     //Quicksort

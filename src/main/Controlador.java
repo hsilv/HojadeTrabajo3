@@ -5,10 +5,7 @@
  */
 package main;
 
-<<<<<<< HEAD
 import fileGenerator.Principal;
-=======
->>>>>>> Developer-3
 import java.util.ArrayList;
 
 /**
@@ -21,22 +18,16 @@ public class Controlador {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-<<<<<<< HEAD
-        System.out.println("Hola a todos");
+        System.out.println("Hola");
         Principal p = new Principal();
         p.generarArchivo("F:\\Programacion\\HojadeTrabajo3\\src\\main\\nombre.txt", 10000);
         ArrayList<Integer> numeros = p.leerArchivo();
-=======
-        System.out.println("Welcome");
-        
     }
-    //Convierte un ArrayList a array para ser enviado a RadixSort
-    static int[] convertor(ArrayList<Integer> arr){
-        int [] nuevo = new int[arr.size()];
-        for (int i = 0; i<arr.size();i++){
-            nuevo[i] = arr.get(i);
+    public int[] convertir(ArrayList<Integer> lista){
+        int[] nuevo = new int[lista.size()];
+        for (int i = 0;i<lista.size();i++){
+            nuevo[i] = lista.get(i);
         }
         return nuevo;
->>>>>>> Developer-3
     }
 }
