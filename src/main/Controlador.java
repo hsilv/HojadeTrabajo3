@@ -6,8 +6,6 @@
 package main;
 import java.util.ArrayList;
 
-import Generador.Archivo;
-
 /**
  *
  * @author Sebastián
@@ -29,14 +27,14 @@ public class Controlador {
 
         for (int i=0;i<lista.size();i++)
         {
-            System.out.println(lista.get(i)); 
+            System.out.println(lista.get(i));
         }
         
         sort.gnomeSort(nuevaLista);
         
         for (int i=0;i<lista.size();i++)
         {
-            System.out.println(lista.get(i));    
+            System.out.println(lista.get(i));
         }
     }
 
