@@ -18,16 +18,10 @@ public class Controlador {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("Hola");
+        System.out.println("Hola a todos");
         Principal p = new Principal();
-        p.generarArchivo("F:\\Programacion\\HojadeTrabajo3\\src\\main\\nombre.txt", 10000);
+        p.generarArchivo("F:\\Programacion\\HojadeTrabajo3\\src\\main\\numeros.txt", 10000);
         ArrayList<Integer> numeros = p.leerArchivo();
     }
-    public int[] convertir(ArrayList<Integer> lista){
-        int[] nuevo = new int[lista.size()];
-        for (int i = 0;i<lista.size();i++){
-            nuevo[i] = lista.get(i);
-        }
-        return nuevo;
-    }
+    
 }
