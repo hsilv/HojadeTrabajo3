@@ -1,21 +1,7 @@
-/**
- * Clase encargada del manejo del archivo tipo txt.
- * Autores:
- * 		Herber Sebastian Silva Muñoz 	21764
- * 		Daniel Esteban Morales Urizar 	21785
- * 		Elias Alberto Alvarado Raxon 	21808
- * Fecha de creacion: 27/02/2022
- * @version 1
- */
+package fileGenerator;
 
-
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
 
 public class Archivo

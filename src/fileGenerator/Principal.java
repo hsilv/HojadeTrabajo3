@@ -1,29 +1,28 @@
-import java.util.ArrayList;
-import java.util.Scanner;
+package fileGenerator;
+
+import java.util.*;
 
 
 public class Principal
 {
-    public static void main(String[] args)
+    Archivo file;
+    public void generarArchivo(String ruta, int numeros)
     {
-        String ruta = "";
         Archivo archivo = new Archivo();
+        this.file = archivo;
         Scanner scanner = new Scanner(System.in);
         
         try {
             //System.out.println("\nPor favor, ingrese la ruta de su archivo de tipo texto.");
             //ruta = scanner.nextLine();
             //ruta = ruta + "\\datos.txt";
-            ruta = "C:\\Users\\ealva\\Documents\\Java\\Generador\\numeros.txt";
             System.out.println(archivo.crearArchivo(ruta));
-            archivo.agregarNumeros(1);
+            archivo.agregarNumeros(numeros);
             
         } catch (Exception e) {
             //TODO: handle exception
             System.out.println("\nNo se pudo leer el documento. Por favor, asegurese que la ruta sea la correcta.");
         }
-
-        System.out.println(imprimir(archivo.leerArchivo()));
     }    
 
     public static String imprimir(ArrayList<Integer> lista)
@@ -48,7 +47,7 @@ public class Principal
                 System.out.println(pregunta);
                 respuesta = scanner.nextInt();
                 scanner.nextLine();
-                if(respuesta > 0 && respuesta <= opciones) bucle = false;
+                if(respuesta > 10 && respuesta <= opciones) bucle = false;
                 else System.out.println("\nRepuesta no valida.\n");
             }    
         } catch (Exception e) {
@@ -56,5 +55,9 @@ public class Principal
             respuesta = pregunta(pregunta, opciones);
         }
         return respuesta;
+    }
+    
+    public ArrayList<Integer> leerArchivo (){
+        return this.file.leerArchivo();
     }
 }
