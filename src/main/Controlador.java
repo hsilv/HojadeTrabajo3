@@ -6,7 +6,7 @@
 package main;
 import java.util.ArrayList;
 
-import Generador.*;
+import Generador.Archivo;
 
 /**
  *
@@ -20,15 +20,31 @@ public class Controlador {
     {
         Sort sort = new Sort();
         Archivo archivo = new Archivo();
-        archivo.crearArchivo("C:\\Users\\ealva \\Documents\\GitHub\\HojadeTrabajo3\\src\\main");
-        archivo.agregarNumeros(100);
+        archivo.crearArchivo("C:\\Users\\ealva\\Documents\\GitHub\\HojadeTrabajo3\\src\\main");
+        archivo.agregarNumeros(10);
 
         ArrayList<Integer> lista = new ArrayList<>();
         lista = archivo.leerArchivo();
-        
-        System.out.println("Welcome");
-        
+        int[] nuevaLista = convertir(lista);
 
+        for (int i=0;i<lista.size();i++)
+        {
+            System.out.println(lista.get(i)); 
+        }
+        
+        sort.gnomeSort(nuevaLista);
+        
+        for (int i=0;i<lista.size();i++)
+        {
+            System.out.println(lista.get(i));    
+        }
+    }
+
+    public static int[] convertir(ArrayList<Integer> lista)
+    {
+        int[] nueva = lista.stream().mapToInt(i -> i).toArray();
+
+        return nueva;
     }
     
 }

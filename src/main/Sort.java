@@ -2,6 +2,10 @@ package main;
 
 public class Sort
 {
+	public Sort()
+	{
+		
+	}
     public void gnomeSort(int[] lista)
     {
         int i=1;
