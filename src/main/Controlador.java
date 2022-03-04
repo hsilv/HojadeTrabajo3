@@ -18,10 +18,15 @@ public class Controlador {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("Hola a todos");
         Principal p = new Principal();
         p.generarArchivo("F:\\Java POO\\Programacion\\HojadeTrabajo3\\src\\main\\numeros.txt", 10000);
+        Sort<Integer> sort = new Sort<Integer>();
         ArrayList<Integer> numeros = p.leerArchivo();
+        numeros = sort.bubbleSort(numeros);
+        for(Integer numero: numeros){
+            System.out.println(numero);
+        }
+
     }
 
     public int[] convertir(ArrayList<Integer> lista) {

@@ -14,7 +14,7 @@ public class Sort<T> implements Comparador {
     
     public ArrayList<Integer> bubbleSort(ArrayList<Integer> lista){
         for(int n = 0; n<lista.size(); n++){
-            for(int z=0; z< lista.size()-z; z++){
+            for(int z=0; z< lista.size()-1; z++){
                 if(Compare(lista.get(z), lista.get(z+1)) > 0){
                     int u = lista.get(z);
                     lista.set(z, lista.get(z+1));
@@ -103,7 +103,7 @@ public class Sort<T> implements Comparador {
         for (int place = 1; max / place >0;place*=10)
             countingsort(data, n,place);
     }
-    public void countingsort(int[] arr, int n, int place){
+    public static void countingsort(int[] arr, int n, int place){
         int [] output = new int[n];
         int [] count = new int [n];
         for (int i = 0; i<n;i++)
