@@ -7,7 +7,6 @@
  * Fecha de creacion: 27/02/2022
  * @version 1
  */
-package Generador;
 
 import java.io.BufferedWriter;
 import java.io.File;

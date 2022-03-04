@@ -1,41 +1,50 @@
-package Generador;
+package main;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
-
 
 public class Principal
 {
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String[] args)
     {
-        String ruta = "";
+        Controlador controlador = new Controlador();
+        Sort sort = new Sort();
         Archivo archivo = new Archivo();
+        String ruta = "";
         Scanner scanner = new Scanner(System.in);
         
         try {
             //System.out.println("\nPor favor, ingrese la ruta de su archivo de tipo texto.");
             //ruta = scanner.nextLine();
-            //ruta = ruta + "\\datos.txt";
-            ruta = "C:\\Users\\ealva\\Documents\\Java\\Generador\\numeros.txt";
+            //ruta = ruta + "\\numeros.txt";
+            ruta = "C:\\Users\\ealva\\Documents\\GitHub\\HojadeTrabajo3\\src\\numeros.txt";
             System.out.println(archivo.crearArchivo(ruta));
-            archivo.agregarNumeros(1);
+            archivo.agregarNumeros(10);
             
         } catch (Exception e) {
             //TODO: handle exception
             System.out.println("\nNo se pudo leer el documento. Por favor, asegurese que la ruta sea la correcta.");
         }
 
-        System.out.println(imprimir(archivo.leerArchivo()));
-    }    
+        ArrayList<Integer> lista = new ArrayList<>();
+        lista = archivo.leerArchivo();
+        int[] nuevaLista = controlador.convertir(lista);
 
-    public static String imprimir(ArrayList<Integer> lista)
-    {
-        String info = "";
-        for(int x: lista)
-        {
-            info += x + "\n";
-        }
-        return info;
+        
+        System.out.println("\nDatos");
+        System.out.println("\n" + lista.toString());
+        
+        int[] ordenados = sort.gnomeSort(nuevaLista, 10);
+        System.out.println("\nOrdenados con Gnome");
+        System.out.println("\n" + Arrays.toString(ordenados));
+        
+        System.out.println("\nOrdenados con Merge");
+        int[] ordenadosMerge = sort.mergeSort(nuevaLista);
+        System.out.println("\n" + Arrays.toString(ordenadosMerge));
     }
 
     public static int pregunta(String pregunta, int opciones)
@@ -59,4 +68,6 @@ public class Principal
         }
         return respuesta;
     }
+
+
 }

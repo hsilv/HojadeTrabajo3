@@ -43,7 +43,7 @@ public class Archivo
 			BufferedWriter bfwriter = new BufferedWriter(flwriter);
 			while(x < cantidad)
             {
-				bfwriter.write(random.nextInt(999999) + "\n");
+				bfwriter.write(random.nextInt(10) + "\n");
                 x++;
 			}
 			//cierra el buffer intermedio
