@@ -2,49 +2,49 @@ package main;
 
 public class Sort
 {
-    public void gnomeSort(int[] nums)
+    public void gnomeSort(int[] lista)
     {
         int i=1;
         int j=2;
         
-        while(i < nums.length)
+        while(i < lista.length)
         {
-            if(nums[i-1] <= nums[i])
+            if(lista[i - 1] <= lista[i])
             {
                 i = j;
                 j++;
             }
             else
             {
-                int tmp = nums[i-1];
-                nums[i-1] = nums[i];
-                nums[i--] = tmp;
-                i = (i==0) ? j++ : i;
+                int x = lista[i - 1];
+                lista[i - 1] = lista[i];
+                lista[i--] = x;
+				if(i == 0) j++;
             }
         }
     }
 
-    //////////////////////////
+	////////////////////////////////////////////////
 
-    public Integer[] mergeSort(Integer[] arreglo)
+    public Integer[] mergeSort(Integer[] lista)
     {
-		Integer[] arr = arreglo;
-		mSort(arr, 0, arr.length - 1);
-		return arr;
+		mSort(lista, 0, lista.length - 1);
+		return lista;
 	}
 	
 	public void mSort(Integer[] arreglo, int inicio, int fin)
     {
-		if(inicio<fin) {
-			// Encontrar el punto medio del arreglo
-			int medio = inicio + (fin - inicio) / 2;
+		if(inicio > fin) return;
+		else
+		{
+			int puntoM = inicio + (fin - inicio) / 2;
 		
 			// Ordenar cada mitad
-			mSort(arreglo, inicio, medio);
-			mSort(arreglo, medio + 1, fin);
+			mSort(arreglo, inicio, puntoM);
+			mSort(arreglo, puntoM + 1, fin);
 			
 			// Unir las dos mitades
-			merge(arreglo, inicio, medio, fin);
+			merge(arreglo, inicio, puntoM, fin);
 		}
 	}
 	
@@ -102,5 +102,35 @@ public class Sort
 			j++;
 			k++;
 		}
+	}
+
+	/////////////////////////////////////
+
+	public void mergeSort(int[] lista)
+	{
+		if (lista.length < 2) return;
+		int puntoM = lista.length / 2;
+		int[] inicio = new int[puntoM];
+		int[] fin = new int[lista.length - puntoM];
+	
+		for (int i = 0; i < puntoM; i++) inicio[i] = lista[i];
+		for (int i = puntoM; i < lista.length; i++) fin[i - puntoM] = lista[i];
+
+		mergeSort(inicio);
+		mergeSort(fin);
+	
+		merge(lista, inicio, fin);
+	}
+
+	public static void merge(int[] lista, int[] inicio, int[] fin)
+	{
+		int i = 0, j = 0, k = 0;
+		while (i < inicio.length && j < fin.length)
+		{
+			if (inicio[i] <= fin[j]) lista[k++] = inicio[i++];
+			else lista[k++] = fin[j++];				
+		}
+		while (i < inicio.length) lista[k++] = inicio[i++];
+		while (j < fin.length) lista[k++] = fin[j++];
 	}
 }
