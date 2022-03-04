@@ -18,6 +18,7 @@ public class Controlador {
      */
     public static void main(String[] args) {
         System.out.println("Welcome");
+        
     }
     //Convierte un ArrayList a array para ser enviado a RadixSort
     static int[] convertor(ArrayList<Integer> arr){
