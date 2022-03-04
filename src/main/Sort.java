@@ -6,26 +6,25 @@ public class Sort
 	{
 		
 	}
-    public void gnomeSort(int[] lista)
+	
+    public int[] gnomeSort(int arr[], int n)
     {
-        int i=1;
-        int j=2;
-        
-        while(i < lista.length)
-        {
-            if(lista[i - 1] <= lista[i])
-            {
-                i = j;
-                j++;
-            }
-            else
-            {
-                int x = lista[i - 1];
-                lista[i - 1] = lista[i];
-                lista[i--] = x;
-				if(i == 0) j++;
+        int index = 0;
+  
+        while (index < n) {
+            if (index == 0)
+                index++;
+            if (arr[index] >= arr[index - 1])
+                index++;
+            else {
+                int temp = 0;
+                temp = arr[index];
+                arr[index] = arr[index - 1];
+                arr[index - 1] = temp;
+                index--;
             }
         }
+        return arr;
     }
 
 	////////////////////////////////////////////////
@@ -110,9 +109,9 @@ public class Sort
 
 	/////////////////////////////////////
 
-	public void mergeSort(int[] lista)
+	public int[] mergeSort(int[] lista)
 	{
-		if (lista.length < 2) return;
+		if (lista.length < 2) return lista;
 		int puntoM = lista.length / 2;
 		int[] inicio = new int[puntoM];
 		int[] fin = new int[lista.length - puntoM];
@@ -123,10 +122,10 @@ public class Sort
 		mergeSort(inicio);
 		mergeSort(fin);
 	
-		merge(lista, inicio, fin);
+		return merge(lista, inicio, fin);
 	}
 
-	public static void merge(int[] lista, int[] inicio, int[] fin)
+	public int[] merge(int[] lista, int[] inicio, int[] fin)
 	{
 		int i = 0, j = 0, k = 0;
 		while (i < inicio.length && j < fin.length)
@@ -136,5 +135,7 @@ public class Sort
 		}
 		while (i < inicio.length) lista[k++] = inicio[i++];
 		while (j < fin.length) lista[k++] = fin[j++];
+
+		return lista;
 	}
 }
