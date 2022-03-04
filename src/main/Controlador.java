@@ -23,5 +23,11 @@ public class Controlador {
         p.generarArchivo("F:\\Programacion\\HojadeTrabajo3\\src\\main\\nombre.txt", 10000);
         ArrayList<Integer> numeros = p.leerArchivo();
     }
-    
+    public int[] convertir(ArrayList<Integer> lista){
+        int[] nuevo = new int[lista.size()];
+        for (int i = 0;i<lista.size();i++){
+            nuevo[i] = lista.get(i);
+        }
+        return nuveo;
+    }
 }
