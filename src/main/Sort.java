@@ -1,8 +1,23 @@
+/**
+ * Clase Sort, sera la que contenga los metodos para poder realizar los ordenamientos utilizado distinto sort
+ * Autores:
+ * 		Herber Sebastian Silva Muñoz 	21764
+ * 		Daniel Esteban Morales Urizar 	21785
+ * 		Elias Alberto Alvarado Raxon 	21808
+ * Fecha de creacion: 27/02/2022
+ * @version 10
+ */
+
 package main;
 import java.util.*;
 
-public class Sort<T> implements Comparador {
-
+public class Sort<T> implements Comparador
+{
+    /** 
+     * @param object1
+     * @param object2
+     * @return int
+     */
     public int Compare(int object1, int object2){
         if(object1 >= object2){
             return 1;
@@ -12,6 +27,10 @@ public class Sort<T> implements Comparador {
         else return 1;
     }
     
+    /** 
+     * @param lista
+     * @return ArrayList<Integer>
+     */
     public ArrayList<Integer> bubbleSort(ArrayList<Integer> lista){
         for(int n = 0; n<lista.size(); n++){
             for(int z=0; z< lista.size()-1; z++){
@@ -24,7 +43,11 @@ public class Sort<T> implements Comparador {
         }
        return lista; 
     }
-
+    
+    /** 
+     * @param lista
+     * @return ArrayList<Integer>
+     */
     public ArrayList<Integer> gnomeSort(ArrayList<Integer> lista)
     {
         int index = 0;
@@ -44,8 +67,12 @@ public class Sort<T> implements Comparador {
         }
         return lista;
     }
-
-	public int[] mergeSort(int[] lista)
+	
+    /** 
+     * @param lista
+     * @return int[]
+     */
+    public int[] mergeSort(int[] lista)
 	{
 		if (lista.length < 2) return lista;
 		int puntoM = lista.length / 2;
@@ -60,8 +87,14 @@ public class Sort<T> implements Comparador {
 	
 		return merge(lista, inicio, fin);
 	}
-
-	public int[] merge(int[] lista, int[] inicio, int[] fin)
+	
+    /** 
+     * @param lista
+     * @param inicio
+     * @param fin
+     * @return int[]
+     */
+    public int[] merge(int[] lista, int[] inicio, int[] fin)
 	{
 		int i = 0, j = 0, k = 0;
 		while (i < inicio.length && j < fin.length)
@@ -74,7 +107,12 @@ public class Sort<T> implements Comparador {
 
 		return lista;
 	}
-
+    
+    /** 
+     * @param data
+     * @param t
+     * @return ArrayList<Integer>
+     */
     public ArrayList<Integer> Quicksort(ArrayList<Integer> data, int t){
 
         if(t >= 1)
@@ -101,13 +139,24 @@ public class Sort<T> implements Comparador {
             
         return data;
     }
-
+    
+    /** 
+     * @param data
+     * @param n
+     * @return ArrayList<Integer>
+     */
     public ArrayList<Integer> Radix(int[] data, int n){
         int max = getMax(data,n);
         for (int place = 1; max / place >0;place*=10)
             countingsort(data, n,place);
         return arrayToList(data);
     }
+    
+    /** 
+     * @param arr
+     * @param n
+     * @param place
+     */
     public static void countingsort(int[] arr, int n, int place){
         int [] output = new int[n];
         int [] count = new int [n];
@@ -128,6 +177,12 @@ public class Sort<T> implements Comparador {
         for (int i = 0; i < n; i++)
             arr[i] = output[i];
     }
+    
+    /** 
+     * @param arr
+     * @param n
+     * @return int
+     */
     //metod para encontrar el mayor de la lista (para radix)
     static int getMax(int[] arr,int n){
         int mx = arr[0];
@@ -138,6 +193,10 @@ public class Sort<T> implements Comparador {
         return mx;
     }
     
+    /** 
+     * @param array
+     * @return ArrayList<Integer>
+     */
     public ArrayList<Integer> arrayToList(int[] array){
         ArrayList<Integer> lista = new ArrayList();
         for(int i = 0; i<array.length; i++){

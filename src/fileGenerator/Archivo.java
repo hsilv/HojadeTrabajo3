@@ -1,3 +1,13 @@
+/**
+ * Clase encargada del manejo del archivo tipo txt.
+ * Autores:
+ * 		Herber Sebastian Silva Muñoz 	21764
+ * 		Daniel Esteban Morales Urizar 	21785
+ * 		Elias Alberto Alvarado Raxon 	21808
+ * Fecha de creacion: 27/02/2022
+ * @version 5
+ */
+
 package fileGenerator;
 
 import java.io.*;
@@ -7,8 +17,12 @@ import java.util.*;
 public class Archivo
 {
     private File archivo;
-    
-    public String crearArchivo(String ruta)
+
+	/** 
+	 * @param ruta
+	 * @return String
+	 */
+	public String crearArchivo(String ruta)
     {
         try {
             this.archivo = new File(ruta);
@@ -18,8 +32,11 @@ public class Archivo
             return "\nOcurrio un error al intentar crear el archivo.";
         }
     }
-
-    public void agregarNumeros(int cantidad)
+    
+	/** 
+	 * @param cantidad
+	 */
+	public void agregarNumeros(int cantidad)
     {
 		FileWriter flwriter = null;
         int x = 0;
@@ -49,6 +66,9 @@ public class Archivo
 		}
 	}
 
+	/** 
+	 * @return ArrayList<Integer>
+	 */
 	public ArrayList<Integer> leerArchivo()
 	{
 		try {
@@ -70,5 +90,4 @@ public class Archivo
 			return null;
 		}
 	}
-    
 }

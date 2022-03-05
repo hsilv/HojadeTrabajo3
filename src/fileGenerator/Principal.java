@@ -1,3 +1,13 @@
+/**
+ * Clase principal para la creacion y lectura del archivo txt.
+ * Autores:
+ * 		Herber Sebastian Silva Muñoz 	21764
+ * 		Daniel Esteban Morales Urizar 	21785
+ * 		Elias Alberto Alvarado Raxon 	21808
+ * Fecha de creacion: 27/02/2022
+ * @version 6
+ */
+
 package fileGenerator;
 
 import java.util.*;
@@ -6,6 +16,11 @@ import java.util.*;
 public class Principal
 {
     Archivo file;
+    
+    /** 
+     * @param ruta
+     * @param numeros
+     */
     public void generarArchivo(String ruta, int numeros)
     {
         Archivo archivo = new Archivo();
@@ -24,7 +39,11 @@ public class Principal
             System.out.println("\nNo se pudo leer el documento. Por favor, asegurese que la ruta sea la correcta.");
         }
     }    
-
+    
+    /** 
+     * @param lista
+     * @return String
+     */
     public static String imprimir(ArrayList<Integer> lista)
     {
         String info = "";
@@ -34,7 +53,12 @@ public class Principal
         }
         return info;
     }
-
+    
+    /** 
+     * @param pregunta
+     * @param opciones
+     * @return int
+     */
     public static int pregunta(String pregunta, int opciones)
     {
         boolean bucle = true;
@@ -57,6 +81,9 @@ public class Principal
         return respuesta;
     }
     
+    /** 
+     * @return ArrayList<Integer>
+     */
     public ArrayList<Integer> leerArchivo (){
         return this.file.leerArchivo();
     }

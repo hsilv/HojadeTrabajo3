@@ -1,21 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Clase controlador, sera la encargada de tener el control de todas las acciones que realizara el programa
+ * Autores:
+ * 		Herber Sebastian Silva Muñoz 	21764
+ * 		Daniel Esteban Morales Urizar 	21785
+ * 		Elias Alberto Alvarado Raxon 	21808
+ * Fecha de creacion: 27/02/2022
+ * @version 8
  */
+
 package main;
 
 import fileGenerator.Principal;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 /**
  *
  * @author Sebastián
  */
-public class Controlador {
-
+public class Controlador
+{
     /**
      * @param args the command line arguments
      */
@@ -59,6 +63,10 @@ public class Controlador {
     }
 }
 
+/** 
+ * @param lista
+ * @return int[]
+ */
 public static int[] convertir(ArrayList<Integer> lista) {
         int[] nuevo = new int[lista.size()];
         for (int i = 0; i < lista.size(); i++) {
