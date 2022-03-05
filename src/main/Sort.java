@@ -25,24 +25,24 @@ public class Sort<T> implements Comparador {
        return lista; 
     }
 
-    public int[] gnomeSort(int arr[], int n)
+    public ArrayList<Integer> gnomeSort(ArrayList<Integer> lista)
     {
         int index = 0;
   
-        while (index < n) {
+        while (index < lista.size()) {
             if (index == 0)
                 index++;
-            if (arr[index] >= arr[index - 1])
+            if (lista.get(index) >= lista.get(index-1))
                 index++;
             else {
                 int temp = 0;
-                temp = arr[index];
-                arr[index] = arr[index - 1];
-                arr[index - 1] = temp;
+                temp = lista.get(index);
+                lista.set(index, lista.get(index-1));
+                lista.set(index-1, temp);
                 index--;
             }
         }
-        return arr;
+        return lista;
     }
 
 	public int[] mergeSort(int[] lista)
@@ -131,5 +131,13 @@ public class Sort<T> implements Comparador {
                 mx = arr[i];
         }
         return mx;
+    }
+    
+    public ArrayList<Integer> arrayToList(int[] array){
+        ArrayList<Integer> lista = new ArrayList();
+        for(int i = 0; i<array.length; i++){
+            lista.add(i);
+        }
+        return lista;
     }
 }

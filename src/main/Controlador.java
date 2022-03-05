@@ -29,7 +29,7 @@ public class Controlador {
 
     }
 
-    public int[] convertir(ArrayList<Integer> lista) {
+    public static int[] convertir(ArrayList<Integer> lista) {
         int[] nuevo = new int[lista.size()];
         for (int i = 0; i < lista.size(); i++) {
             nuevo[i] = lista.get(i);
