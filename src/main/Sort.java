@@ -75,7 +75,7 @@ public class Sort<T> implements Comparador {
 		return lista;
 	}
 
-    public void Quicksort(ArrayList<Integer> data, int t){
+    public ArrayList<Integer> Quicksort(ArrayList<Integer> data, int t){
         ArrayList<Integer> l1 = new ArrayList<Integer>();
         ArrayList<Integer> l2 = new ArrayList<Integer>();
         int t1 = 0;
@@ -96,12 +96,14 @@ public class Sort<T> implements Comparador {
         data.add(t1,e);
         for(int i = 0;i<t2;i++)
             data.add(t1+i+1,l2.get(i));
+        return data;
     }
 
-    public void Radix(int[] data, int n){
+    public ArrayList<Integer> Radix(int[] data, int n){
         int max = getMax(data,n);
         for (int place = 1; max / place >0;place*=10)
             countingsort(data, n,place);
+        return arrayToList(data);
     }
     public static void countingsort(int[] arr, int n, int place){
         int [] output = new int[n];

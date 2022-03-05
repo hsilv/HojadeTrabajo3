@@ -7,6 +7,7 @@ package main;
 
 import fileGenerator.Principal;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  *
@@ -22,11 +23,32 @@ public class Controlador {
         p.generarArchivo("F:\\Java POO\\Programacion\\HojadeTrabajo3\\src\\main\\numeros.txt", 10000);
         Sort<Integer> sort = new Sort<Integer>();
         ArrayList<Integer> numeros = p.leerArchivo();
+        ArrayList<Integer> numeros2 = p.leerArchivo();
         numeros = sort.bubbleSort(numeros);
         for(Integer numero: numeros){
             System.out.println(numero);
         }
+        
+        ArrayList<Integer> lista = new ArrayList<>();
+        lista = p.leerArchivo();
+        int[] nuevaLista = convertir(lista);
 
+        
+        System.out.println("\nDatos");
+        System.out.println("\n" + lista.toString());
+        
+        int [] ordenados = convertir(sort.gnomeSort(lista));
+        System.out.println("\nOrdenados con Gnome");
+        System.out.println("\n" + Arrays.toString(ordenados));
+        
+        System.out.println("\nOrdenados con Merge");
+        int[] ordenadosMerge = sort.mergeSort(nuevaLista);
+        System.out.println("\n" + Arrays.toString(ordenadosMerge));
+        
+        numeros2 = sort.Radix(convertir(numeros2), numeros2.size());
+        for(Integer numero: numeros2){
+            System.out.println(numero);
+        }
     }
 
     public static int[] convertir(ArrayList<Integer> lista) {
