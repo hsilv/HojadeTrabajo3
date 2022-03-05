@@ -44,6 +44,10 @@ public class Controlador {
         System.out.println("\nOrdenados con Merge");
         int[] ordenadosMerge = sort.mergeSort(nuevaLista);
         System.out.println("\n" + Arrays.toString(ordenadosMerge));
+
+        System.out.println("\nOrdenados con Quick");
+        ArrayList<Integer> ordenadosQuick = sort.Quicksort(numeros, 100);
+        System.out.println("\n" + ordenadosQuick.toString());
         
         numeros2 = sort.Radix(convertir(numeros2), numeros2.size());
         for(Integer numero: numeros2){
