@@ -26,6 +26,22 @@ public class Controlador {
         for(Integer numero: numeros){
             System.out.println(numero);
         }
+        
+        ArrayList<Integer> lista = new ArrayList<>();
+        lista = archivo.leerArchivo();
+        int[] nuevaLista = controlador.convertir(lista);
+
+        
+        System.out.println("\nDatos");
+        System.out.println("\n" + lista.toString());
+        
+        int[] ordenados = sort.gnomeSort(nuevaLista, 10);
+        System.out.println("\nOrdenados con Gnome");
+        System.out.println("\n" + Arrays.toString(ordenados));
+        
+        System.out.println("\nOrdenados con Merge");
+        int[] ordenadosMerge = sort.mergeSort(nuevaLista);
+        System.out.println("\n" + Arrays.toString(ordenadosMerge));
 
     }
 
